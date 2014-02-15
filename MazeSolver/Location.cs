@@ -2,28 +2,6 @@ using System;
 
 namespace MazeSolver
 {
-	class MainClass
-	{
-		public static void Main (string[] args)
-		{
-			Console.WriteLine ("Hello World!");
-		}
-	}
-	public class Maze
-	{
-		//private Array<ILocation,ILocation> Locations;
-		//public Array<ILocation,ILocation> AdjacentLocations( ILocation loc){
-
-		//}
-	}
-
-	public interface ILocation{
-		int Row{ get; }
-		int Column{ get; }
-		bool CanStepInto();
-		bool IsStart();
-		bool IsEnd();
-	}
 
 	public abstract class Location:ILocation{
 		public Location( int row, int column ){
@@ -34,9 +12,8 @@ namespace MazeSolver
 		public int Row { get; private set; }
 
 		public int Column { get;private set; }
-
 	}
-
+		
 	public class Start:Location{
 		public bool CanStepInto(){
 			return true;
@@ -87,4 +64,5 @@ namespace MazeSolver
 			return false;
 		}
 	}
+	
 }
